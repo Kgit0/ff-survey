@@ -1,0 +1,325 @@
+[
+	{
+		"coord": {
+			"lat": 6.592376299999999,
+			"long": 3.3430031
+		},
+		"name": "Conoil Petrol Station",
+		"address": "Ikeja",
+		"id": "5e98b0ca0c780701b0c9d654",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b5f",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.594479799999999,
+			"long": 3.342312
+		},
+		"name": "MRS",
+		"address": "Opposite c Computer Village, Ikeja",
+		"id": "5e98b0ca0c780701b0c9d653",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b60",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.5964509,
+			"long": 3.3497012
+		},
+		"name": "Total - Toyin Service Station",
+		"address": "19 Toyin Street, Ikeja, Off Allen Avenue, By The Catolic Church, Lagos",
+		"id": "5e98b0ca0c780701b0c9d64c",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b61",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.596076000000001,
+			"long": 3.3412805
+		},
+		"name": "MRS Filling Station",
+		"address": "Mega City Street Off Konesho Street, Ikeja",
+		"id": "5e98b0ca0c780701b0c9d652",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b62",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.591650199999999,
+			"long": 3.3367867
+		},
+		"name": "Conoil",
+		"address": "Abeokuta Expressway, Lagos",
+		"id": "5e98b0ca0c780701b0c9d658",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b63",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.5995523,
+			"long": 3.3485649
+		},
+		"name": "CFI Worldwide & CFI Petroleum & Gas Ltd",
+		"address": "Ikeja",
+		"id": "5e98b0ca0c780701b0c9d64a",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b64",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.6010623,
+			"long": 3.3441082
+		},
+		"name": "Total Obafemi Awolowo Service Station",
+		"address": "Ikeja",
+		"id": "5e98b0ca0c780701b0c9d64e",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b65",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.601838,
+			"long": 3.3514863
+		},
+		"name": "Total - Ikeja Service Station",
+		"address": "19, Toyin Street, Off Allen Avenue, Ikeja, By The Catolic Church, Lagos",
+		"id": "5e98b0ca0c780701b0c9d648",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b66",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.6024129,
+			"long": 3.3546451
+		},
+		"name": "Total Toyin St Ikeja",
+		"address": "Ogundana Street, Ikeja",
+		"id": "5e98b0ca0c780701b0c9d649",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b67",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.604911599999999,
+			"long": 3.3470052
+		},
+		"name": "Mutaj Resources Nigeria Limited",
+		"address": "No. 139 Awolowo Road, Lagos",
+		"id": "5e98b0ca0c780701b0c9d64b",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b68",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.60232,
+			"long": 3.33778
+		},
+		"name": "Sungas Company Limited IKEJA",
+		"address": "1, Obasa Road, Industrial Estate, Ikeja, Lagos, Lagos",
+		"id": "5e98b0ca0c780701b0c9d655",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b69",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.6053644,
+			"long": 3.3468067
+		},
+		"name": "Mobil",
+		"address": "1 Kofoworola Crescent, off Obafemi Awolowo Way, Ikeja",
+		"id": "5e98b0ca0c780701b0c9d64d",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b6a",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.6053761,
+			"long": 3.3466512
+		},
+		"name": "Mobil Filling Station",
+		"address": "Kofoworola Crescent, Lagos",
+		"id": "5e98b0ca0c780701b0c9d647",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b6b",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.599537,
+			"long": 3.362792
+		},
+		"name": "Total Filling Station",
+		"address": "Ibijoke Street, Ikeja",
+		"id": "5e98b0ca0c780701b0c9d651",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b6c",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.5996942,
+			"long": 3.3652362
+		},
+		"name": "Total - Oregun Service Station",
+		"address": "Kudirat Abiola Way, Ikeja, Oregun Road, Lagos",
+		"id": "5e98b0ca0c780701b0c9d656",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b6d",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.6089876,
+			"long": 3.3540296
+		},
+		"name": "Mobil",
+		"address": "Kudirat Abiola Way, Ikeja",
+		"id": "5e98b0ca0c780701b0c9d64f",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b6e",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	},
+	{
+		"coord": {
+			"lat": 6.609086199999999,
+			"long": 3.3543732
+		},
+		"name": "Conoil Filling Station",
+		"address": "Oregun, Kudirat Abiola Way, Ikeja",
+		"id": "5e98b0ca0c780701b0c9d650",
+		"status": {},
+		"petrol": {
+			"_id": "5ea724d9e01fdc1a8cdb8b6f",
+			"available": null,
+			"price": null,
+			"pumpsTotal": null,
+			"pumpsActive": null
+		},
+		"days_open": {},
+		"edited": false
+	}
+]
