@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ff-survey/precache-manifest.6f78ac9eba4606e69c2f98120dececc6.js"
+  "/ff-survey/precache-manifest.fe9649d6dad69689f2046f7002e61d25.js"
 );
 
 self.addEventListener('message', (event) => {
