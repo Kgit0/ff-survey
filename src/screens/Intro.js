@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import '../assets/css/app.css'
+import LoadingOverlay from 'react-loading-overlay'
 
 class Intro extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			stations:[]
+			stations: [],
+			loading:false
 		}
 	}
 
 	next = () => {
-		this.props.history.push('/Select', { stations: this.state.stations });
+		this.setState({ loading: true })
+		this.props.history.push('/ff-survey/Select', { stations: this.state.stations });
 	}
 
 	componentDidMount() {
-		this.locate();
+		// this.locate();
 		// this.get();
 	}
 
@@ -56,6 +59,11 @@ class Intro extends Component{
 	
 	render() {
 		return (
+
+			<LoadingOverlay
+				active={this.state.loading}
+				spinner
+			>
 			<div className="App" style={{
 				display: 'flex',
 				justifyContent: 'center',
@@ -73,6 +81,7 @@ class Intro extends Component{
 					<button onClick={this.next}>Next</button>
 				</div>
 			</div>
+			</LoadingOverlay >
 		)
 	}
 }

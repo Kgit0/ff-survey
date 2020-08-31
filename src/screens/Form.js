@@ -3,7 +3,9 @@ import '../assets/css/app.css'
 import TimeField from 'react-simple-timefield';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import config from '../config'
+import LoadingOverlay from 'react-loading-overlay'
+// import BounceLoader from 'react-spinners/BounceLoader'
 
 
 class Form extends Component {
@@ -11,22 +13,22 @@ class Form extends Component {
 		super(props);
 
 		// this.onChange = this.onChange.bind(this);
-		try {
+		
 			this.state = {
-				name: this.props.location.state.station.name,
-				address: this.props.location.state.station.address,
-				Opening_time: this.props.location.state.station.openingTime || '00:01',
-				Closing_time: this.props.location.state.station.closingTime || '00:00',
-				Fuel_price: this.props.location.state.station.petrol.price || '',
-				pumps_T: this.props.location.state.station.petrol.pumpsTotal || '',
+				name: "",// this.props.location.state.station.name,
+				address: "",// this.props.location.state.station.address,
+				Opening_time: "",// this.props.location.state.station.openingTime || '00:01',
+				Closing_time: "",// this.props.location.state.station.closingTime || '00:00',
+				Fuel_price: "",// this.props.location.state.station.petrol.price || '',
+				pumps_T: "",// this.props.location.state.station.petrol.pumpsTotal || '',
 				DaysOpen: {
-					Sunday: this.props.location.state.station.days_open.Sunday || false,
-					Monday: this.props.location.state.station.days_open.Monday || false,
-					Tuesday: this.props.location.state.station.days_open.Tuesday || false,
-					Wednesday: this.props.location.state.station.days_open.Wednesday || false,
-					Thursday: this.props.location.state.station.days_open.Thursday || false,
-					Friday: this.props.location.state.station.days_open.Friday || false,
-					Saturday: this.props.location.state.station.days_open.Saturday || false,
+					Sunday: /*false,//*/ this.props.location.state.station.days_open.Sunday || false,
+					Monday: /*false,//*/ this.props.location.state.station.days_open.Monday || false,
+					Tuesday: /*false,//*/ this.props.location.state.station.days_open.Tuesday || false,
+					Wednesday: /*false,//*/ this.props.location.state.station.days_open.Wednesday || false,
+					Thursday: /*false,//*/ this.props.location.state.station.days_open.Thursday || false,
+					Friday: /*false,//*/ this.props.location.state.station.days_open.Friday || false,
+					Saturday: /*false,//*/this.props.location.state.station.days_open.Saturday || false,
 				},
 				errs: {
 					name: false,
@@ -38,26 +40,49 @@ class Form extends Component {
 					DaysOpen: false
 
 				},
-				submitable: false
+				submitable: false,
+				loading:false
 			}
-		} catch (err) {
-			this.props.history.push('Select')
-		}
-
 	}
              
 	componentDidMount() {
-		let s = this.props.location.state.station
-		console.log(s)
+		// console.log(this.props.ma)
+		
 		try {
+			let s = this.props.location.state.station
+			console.log(s)
+			// let do = {...s}
+			let { ...dyo } = s.days_open
+			console.log(dyo)
+			let DO = this.state.DaysOpen
+			DO.Sunday = dyo.Sunday;
+			DO.Monday = dyo.Monday;
+			DO.Tuesday = dyo.Tuesday;
+			DO.Wednesday = dyo.Wednesday;
+			DO.Thursday = dyo.Thursday;
+			DO.Friday = dyo.Friday;
+			DO.Saturday = dyo.Saturday;
+
 			this.setState({
 				name: s.name,
 				address: s.address,
-				Opening_time: s.openingTime || '00.00',
-				Closing_time: s.closingTime || '00.00',
+				Opening_time: s.openingTime,
+				Closing_time: s.closingTime,
+				Fuel_price: s.petrol.price,
+				pumps_T: s.petrol.pumpsTotal,
+				DaysOpen: DO,
 			})
 		} catch (err) {
-			alert(err)
+			toast.error('an error occurred', {
+				position: "bottom-center",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
+			console.log(err)
 		}
 		
 		// this.render()
@@ -91,19 +116,21 @@ class Form extends Component {
 				errs: errs,
 			})
 		}
-		if (type === 'timefield') {
-			alert('jhg')
-		// 	this.setState({ [type]: val })
-		}
+		// if (type === 'timefield') {
+		// 	alert('jhg')
+		// // 	this.setState({ [type]: val })
+		// }
 		// alert(this.state.Opening_time)
 	}
 
 	submit = async () => {
 		this.validate()
 		try {
+			this.setState({ loading: true })
 			let err = Object.values(this.state.errs);
 			if (err.includes(true)) {
 				// alert('true')
+				this.setState({ loading: false })
 				return
 			} else {
 				// alert('false')
@@ -125,7 +152,7 @@ class Form extends Component {
 					},
 					days_open: days_open
 				})
-				let res = await (await fetch(`http://localhost:8000/api/pioneer/${this.props.location.state.station.id}/`, {
+				let res = await (await fetch(`${config.base_url}/api/pioneer/${this.props.location.state.station.id}/`, {
 					method: 'put',
 					headers: {
 						'Accept': 'application/json, text/plain, */*',
@@ -135,8 +162,10 @@ class Form extends Component {
 				}
 				)).json()
 				if (res === 'success') {
-					this.props.history.push('Appreciation', {location:this.props.location.state.station.pos});
+					this.setState({ loading: true })
+					this.props.history.push('/ff-survey/Appreciation', {location:this.props.location.state.station.pos});
 				} else {
+					this.setState({ loading: false })
 					toast.error('an error occurred', {
 						position: "bottom-center",
 						autoClose: 5000,
@@ -150,7 +179,7 @@ class Form extends Component {
 				// alert(res.status)
 			}
 		} catch (err) {
-			// alert(err)
+			this.setState({ loading: false })
 			toast.error('an error occurred', {
 				position: "bottom-center",
 				autoClose: 5000,
@@ -173,10 +202,10 @@ class Form extends Component {
 		let days_open = (Object.values(this.state.DaysOpen).includes(true))
 		let errs = this.state.errs;
 
-		if (name == '') { errs['name'] = true; }
-		if (address == '') { errs['address'] = true; }
-		if (pumps == '') { errs['pumps_T'] = true; }
-		if (price == '') { errs['Fuel_price'] = true; }
+		if (name==='') { errs['name'] = true; }
+		if (address==='') { errs['address'] = true; }
+		if (pumps==='') { errs['pumps_T'] = true; }
+		if (price==='') { errs['Fuel_price'] = true; }
 		if (!days_open) { errs['DaysOpen'] = true }
 		
 		this.setState({ errs: errs });
@@ -189,6 +218,10 @@ class Form extends Component {
 
 	render() {
 		return (
+			<LoadingOverlay
+				active={this.state.loading}
+				spinner
+						>
 			<form className='main' onSubmit={(e) => { e.preventDefault(); return (false) }}>
 				{/* <p>{JSON.stringify(this.state)}</p> */}
 
@@ -281,6 +314,7 @@ class Form extends Component {
 						type='checkbox'
 						name='Monday'
 						defaultChecked={this.state.DaysOpen.Monday}
+
 						onChange={this.onChange}
 					/>
 					<label>Monday</label>
@@ -343,7 +377,7 @@ class Form extends Component {
 					pauseOnHover
 				/>
 			</form>
-
+			</LoadingOverlay>
 		)
 	}
 }
