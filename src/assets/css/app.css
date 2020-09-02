@@ -227,3 +227,13 @@ p.err{
 		flex-direction: row;
 	}
 }
+
+.rtf{
+	margin-top: 5px; 
+	margin-right: 5px;
+}
+
+.rtf--mb__c{
+	padding-top:10px !important;
+	padding-right:10px  !important;
+}

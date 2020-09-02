@@ -49,7 +49,7 @@ class Intro extends Component{
 				if (err) {
 					// alert(err)
 				} else {
-					// alert(JSON.stringify(pos));					
+					alert(JSON.stringify(pos));					
 				}
 			});
 		} else {
@@ -76,7 +76,9 @@ class Intro extends Component{
 					<div style={{ height: '1px', background:'var(--Color3)'}}/>
 					<h3>Hello,</h3>
 					<p>Thanks so much for agreeing to help out with this survey</p>
-					<p>This would help ensure the prices of fuel are as low as possible especially during these complex periods</p>
+					{/* <p>This would help ensure the prices of fuel are as
+						 low as possible especially during these complex periods</p> */}
+					<p>This would also help ensure fellow Nigerians know <b>where</b> to look to get the best quality fuel at the lowest prices</p>
 					<p>Thanks once again, please Click "Next" to continue</p>
 					<button onClick={this.next}>Next</button>
 				</div>

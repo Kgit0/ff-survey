@@ -9,19 +9,22 @@
     "mapbox-gl": "^1.9.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-floating-action-button": "^1.0.5",
     "react-leaflet": "^2.6.3",
     "react-loading-overlay": "^1.0.1",
     "react-mapbox-gl": "^4.8.3",
+    "react-modal": "^3.11.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-simple-timefield": "^3.0.0",
+    "react-tiny-fab": "^3.5.0",
     "react-toastify": "^5.5.0"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build && copy build\\index.html build\\404.html",
+    "build": "react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -13,7 +13,7 @@ class Form extends Component {
 		super(props);
 
 		// this.onChange = this.onChange.bind(this);
-		
+		try{
 			this.state = {
 				name: "",// this.props.location.state.station.name,
 				address: "",// this.props.location.state.station.address,
@@ -43,6 +43,18 @@ class Form extends Component {
 				submitable: false,
 				loading:false
 			}
+		}catch(err){
+			toast.error('an error occurred', {
+				position: "bottom-center",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
+			this.props.history.push('/ff-survey/intro')
+		}
 	}
              
 	componentDidMount() {
@@ -82,11 +94,13 @@ class Form extends Component {
 				draggable: true,
 				progress: undefined,
 			});
+			this.props.history.push('/ff-survey/intro')
 			console.log(err)
 		}
 		
 		// this.render()
 	}
+
 	onChange = (ev,value) => {
 		let type = ev.target.type;
 		let name = ev.target.name;
@@ -217,6 +231,7 @@ class Form extends Component {
 	}
 
 	render() {
+		try{
 		return (
 			<LoadingOverlay
 				active={this.state.loading}
@@ -264,7 +279,7 @@ class Form extends Component {
 				<p className={!this.state.errs.Fuel_price ? 'noErr' : 'err'}>Please enter the number of pumps in the station</p>
 				<br />
 
-				<label>Opening time</label>
+				<label>Opening time (24 hours)</label>
 				<TimeField
 					name='Opening_time'
 					type='timefield'
@@ -276,7 +291,7 @@ class Form extends Component {
 				/>
 				<br />
 
-				<label>Closing time</label>
+				<label>Closing time (24 hours)</label>
 				<TimeField
 					name='Closing_time'
 					type='timefield'
@@ -378,7 +393,20 @@ class Form extends Component {
 				/>
 			</form>
 			</LoadingOverlay>
+			
 		)
+	}catch(err){
+		toast.error('an error occurred', {
+			position: "bottom-center",
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+		});
+		this.props.history.push('/ff-survey/intro')
+	}
 	}
 }
 

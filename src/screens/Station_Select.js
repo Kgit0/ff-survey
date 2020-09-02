@@ -8,6 +8,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import config from '../config'
 import LoadingOverlay from 'react-loading-overlay'
+// import {Container} from 'react-floating-action-button'
+import { Fab } from 'react-tiny-fab';
+import 'react-tiny-fab/dist/styles.css';
 // import BounceLoader from 'react-spinners/BounceLoader'
 // import stations from '../assets/json/stations.json' //debug
 
@@ -104,8 +107,8 @@ class Station_Select extends Component {
 				// this.get({ lat: 6.4597478, long: 3.1989956 })
 				console.log('not undef')
 				// alert("")
-				toast.info('Please enter your area in the search bar', {
-					position: "top-center",
+				toast.info('Please enter your area in the search bar or click the 📍 icon to use your phone\'s location', {
+					position: "bottom-center",
 					autoClose: 8000,
 					hideProgressBar: false,
 					closeOnClick: true,
@@ -307,6 +310,7 @@ class Station_Select extends Component {
 			console.log(err)
 		}
 	}
+
 	handleKeyPress = (event) => {
 		if (event.key === 'Enter') {
 			// console.log('enter press here! ')
@@ -315,7 +319,41 @@ class Station_Select extends Component {
 		}
 	}
 
+	reqLoc=async()=>{
+		if (navigator.geolocation) {
+			await navigator.geolocation.getCurrentPosition((pos, err) => {
+				if (err) {
+					// alert(err)
+					toast.error('an error occurred', {
+						position: "bottom-center",
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+					});
+				} else {
+					alert(JSON.stringify(pos));
+					// this.get(pos)
+				}
+			});
+		} else {
+			alert('Please use a different browser or try a different browser');
+			toast.error('Please use a different browser or try searching for your address below', {
+				position: "bottom-center",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
+		}
+	}
+
 	render() {
+
 		let dropdown = <div className='dropdown' >
 			<div className="searchbar">
 				<select
@@ -329,7 +367,9 @@ class Station_Select extends Component {
 						);
 					})}
 				</select>
+				{/* <div style={{display:'flex',flexDirection:"row"}}> */}
 				<input autoFocus={true} onChange={(ev) => { this.setState({ address: ev.target.value }) }} style={{ flexGrow: 2, padding: '7px' }} placeholder='Please enter your address ex.27 road Festac, No 2 Ipodo street' onKeyPress={this.handleKeyPress} />
+				{/* </div> */}
 				<div>
 					<button style={{ borderRadius: 0, padding: '5px 5px', fontSize: '15px' }} className='wide' onClick={this.getLocGmap}> Search </button>
 				</div>
@@ -434,7 +474,14 @@ class Station_Select extends Component {
 				active={this.state.loading}
 				spinner
 			>
+				{/* <Fab
+						icon={<span role='img' aria-label='location'>📍</span>}
+						position={{ top: 1, right: 5 }}
+						onClick={this.reqLoc}
+					/> */}
 				<div /* onClick={()=>{alert(this.state.windowDimensions.width)} */ className="main main2" >
+					{/* <button> Use my location</button> */}
+					
 					{
 						this.state.windowDimensions.width < 600 ?
 
