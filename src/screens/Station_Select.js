@@ -107,7 +107,7 @@ class Station_Select extends Component {
 				// this.get({ lat: 6.4597478, long: 3.1989956 })
 				console.log('not undef')
 				// alert("")
-				toast.info('Please enter your area in the search bar or click the 📍 icon to use your phone\'s location', {
+				toast.info('Please enter your area in the search bar', {
 					position: "bottom-center",
 					autoClose: 8000,
 					hideProgressBar: false,
@@ -274,6 +274,7 @@ class Station_Select extends Component {
 					}
 				}
 			)).json();
+			console.log(res)
 			this.setState({
 				stations: res.map((s) => {
 					return ({
